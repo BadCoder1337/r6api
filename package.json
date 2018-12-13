@@ -9,7 +9,7 @@
     },
     "scripts": {
         "prepublish": "tsc --skipLibCheck",
-        "postpublish": "rm -rf dist/",
+        "postpublish": "rm -rf build/",
 
         "build": "tsc --skipLibCheck",
         "dev": "tsc -w",
