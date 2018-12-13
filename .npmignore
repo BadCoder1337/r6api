@@ -1,0 +1,9 @@
+/src
+/docs
+.vscode
+tsconfig.json
+*.json
+.gitignore
+.npmignore
+*-error.log
+.prettierrc

@@ -1,0 +1,34 @@
+{
+    "name": "@r6s.media/r6.api",
+    "version": "1.5.0",
+    "description": "Rainbow Six API",
+    "main": "build/index.js",
+    "declaration": "build/index.d.ts",
+    "directories": {
+        "src": "lib"
+    },
+    "scripts": {
+        "prepublish": "tsc --skipLibCheck",
+        "postpublish": "rm -rf dist/",
+
+        "build": "tsc --skipLibCheck",
+        "dev": "tsc -w",
+        "docs": "typedoc --out docs --name R6Api src/index.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "R6S.Media & R6DB.com",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "^3.5.1",
+        "lodash.merge": "^4.6.0",
+        "node-fetch": "^1.7.3"
+    },
+    "devDependencies": {
+        "@types/bluebird": "^3.5.20",
+        "@types/debug": "^0.0.30",
+        "@types/lodash.merge": "^4.6.3",
+        "@types/node-fetch": "^1.6.9",
+        "typedoc": "^0.11.1",
+        "typescript": "^2.8.3"
+    }
+}
