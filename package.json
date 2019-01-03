@@ -1,6 +1,6 @@
 {
     "name": "@r6s.media/r6.api",
-    "version": "1.5.5",
+    "version": "1.5.6",
     "description": "Rainbow Six API",
     "main": "build/index.js",
     "declaration": "build/index.d.ts",
