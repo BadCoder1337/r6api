@@ -1,6 +1,6 @@
 {
     "name": "@r6s.media/r6.api",
-    "version": "1.5.0",
+    "version": "1.5.5",
     "description": "Rainbow Six API",
     "main": "build/index.js",
     "declaration": "build/index.d.ts",
@@ -10,7 +10,6 @@
     "scripts": {
         "prepublish": "tsc --skipLibCheck",
         "postpublish": "rm -rf build/",
-
         "build": "tsc --skipLibCheck",
         "dev": "tsc -w",
         "docs": "typedoc --out docs --name R6Api src/index.ts",

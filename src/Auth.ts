@@ -8,7 +8,6 @@ export interface UbisoftAuthData {
     expiration: string
 }
 
-
 export type UbisoftCreditionals = {
     email: string,
     password: string
@@ -18,12 +17,12 @@ let LOGIN_TIMEOUT: NodeJS.Timer
 
 export class AuthService {
 
-    private CurrentLoggedInUser: UbisoftAuthData | null
+    private CurrentLoggedInUser: UbisoftAuthData | null = null
     private creds: UbisoftCreditionals | null
 
     constructor(creds: UbisoftCreditionals) {
 
-        if (!this.creds.email || !this.creds.password) {
+        if (!creds.email || !creds.password) {
             throw new Errors.MissingCredentialsError();
         }
 
@@ -45,6 +44,10 @@ export class AuthService {
                 LOGIN_TIMEOUT = setTimeout(this.login, expiration);
                 return this.CurrentLoggedInUser
             }
+        }
+
+        if (!this.creds) {
+            throw new Error('Creds not found on login')
         }
 
         const token =
@@ -88,6 +91,9 @@ export class AuthService {
             return this.CurrentLoggedInUser.ticket
         } else {
             await this.login()
+            if (!this.CurrentLoggedInUser) {
+                throw new Error('CurrentLoggedInUser eror on getAuthToken')
+            }
             return this.CurrentLoggedInUser.ticket
         }
     }

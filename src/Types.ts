@@ -1,13 +1,10 @@
-export type UUID = string;
-export enum Platform {
-    PC = 'PC',
-    PS4 = 'PS4',
-    XBOX = 'XBOX',
-}
+export declare type UUID = string;
 
-export type REGION = 'emea' | 'ncsa' | 'apac';
+export type Platform = "PC" | "XBOX" | "PS4" | "XBOXONE";
 
-export interface UbisoftRankResponse {
+export declare type REGION = 'emea' | 'ncsa' | 'apac';
+
+export interface PlayerRankedData {
     region: string;
     board_id: string;
     past_seasons_abandons: number;
@@ -29,31 +26,29 @@ export interface UbisoftRankResponse {
     max_rank: number;
 }
 
-export interface UbisoftRankResponse {
+export interface UbisoftPlayersRankResponse {
     players: {
-        [id: string]: UbisoftRankResponse;
+        [id: string]: PlayerRankedData;
     };
 }
 
-export interface UbisoftPlayerRankData {
+export interface PlayerRankedResponseData {
     id: UUID;
     season: number;
-    apac: UbisoftRankResponse;
-    emea: UbisoftRankResponse;
-    ncsa: UbisoftRankResponse;
+    apac?: PlayerRankedData;
+    emea?: PlayerRankedData;
+    ncsa?: PlayerRankedData;
 }
 
-export interface UbisoftRegionStatsData {
-    [id: string]: UbisoftPlayerRankData;
-}
-
-export interface UbisoftLevelData {
+export interface UbisoftPlayerLevelData {
     profile_id: UUID;
     level: number;
+    lootbox_probability: number,
+    xp: number
 }
 
-export interface UbisoftNameLevelResponse {
-    player_profiles: UbisoftLevelData[];
+export interface UbisoftPlayersLevelResponse {
+    player_profiles: UbisoftPlayerLevelData[];
 }
 
 export interface UbisoftPlaytimeData {
@@ -67,12 +62,34 @@ export interface UbisoftPlaytimeResponse {
     };
 }
 
-export interface UbisoftProfileData {
-    profileId: UUID;
-    userId: UUID;
-    nameOnPlatform: string;
+export interface PlayTimeData {
+    id: UUID,
+    casual: number,
+    ranked: number
 }
 
-export interface UbisoftProfileResponse {
-    profiles: Array<UbisoftProfileData>;
+export interface CurrentNamePlayerData {
+    id: UUID,
+    userId: string,
+    name: string
 }
+
+export interface UbisoftPlayerProfileData {
+    profileId: UUID,
+    userId: UUID,
+    nameOnPlatform: string,
+    platformType: string,
+    idOnPlatform: string
+}
+
+export interface UbisoftProfilesResponse {
+    profiles: Array<UbisoftPlayerProfileData>;
+}
+
+
+//Responses
+export type GetCurrentNameResponse = { [key: string]: CurrentNamePlayerData }
+export type GetRankedResponse = { [key: string]: PlayerRankedResponseData }
+export type GetLevelResponse = { [key: string]: UbisoftPlayerLevelData }
+export type GetPlayTimeResponse = { [key: string]: PlayTimeData }
+export type FindByNameResponse = GetCurrentNameResponse
