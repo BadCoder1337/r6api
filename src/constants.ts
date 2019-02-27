@@ -395,7 +395,7 @@ export const OPERATORS = [
         name: "maverick",
         readableName: "Maverick",
         fullIndex: "2:10",
-        gadget: "nothing"
+        gadget: "operatorpvp_maverick_wallbreached"
     },
     {
         id: "clash",
