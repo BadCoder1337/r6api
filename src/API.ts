@@ -2,10 +2,10 @@ import { AuthService } from "./Auth";
 import { isUuid } from "./helpers";
 import * as Errors from './errors'
 import * as querystring from 'querystring';
-import { regions, URLS } from "./constants";
+import { regions, URLS, STATS } from "./constants";
 import fetcher from './fetch'
-import { isString } from "util";
-import { Platform, REGION, UbisoftPlayersLevelResponse, UbisoftPlaytimeResponse, UbisoftProfilesResponse, GetCurrentNameResponse, GetRankedResponse, GetLevelResponse, GetPlayTimeResponse, UbisoftPlayersRankResponse, UbisoftPlayerProfileData, FindByNameResponse } from "./Types";
+import { isString, isArray } from "util";
+import { Platform, REGION, UbisoftPlayersLevelResponse, UbisoftPlaytimeResponse, UbisoftProfilesResponse, GetCurrentNameResponse, GetRankedResponse, GetStatsResponse, GetLevelResponse, GetPlayTimeResponse, UbisoftPlayersRankResponse, UbisoftPlayerProfileData, FindByNameResponse, StatsSelector, UbisoftPlayerStatsData } from "./Types";
 
 export class APIService {
     private readonly auth: AuthService
@@ -51,6 +51,68 @@ export class APIService {
         }
 
         return rankMap
+    }
+
+    /**
+     * Get Stats of a Player or list of Players by their Ids
+     * 
+     * @param platform Player Platform
+     * @param ids Id or list of ids of players
+     * @param stats Object with selected stats. Wildcard supported
+     */
+
+    async getStats(platform: Platform, ids: string | string[], stats: StatsSelector = { general: ['lost', 'won', 'kills', 'deaths'] }): Promise<GetStatsResponse> {
+
+        let _ids = this._convertIds(ids)
+        this._validateIds(_ids)
+        this._checkIdsLenth(_ids, 200);
+
+        const token = await this.auth.getAuthString();
+
+        const statParams: string[] = [];
+
+        if (stats.general) {
+            const { general } = stats;
+            if (general === '*') {
+                Object.values(STATS.general).map(s => statParams.push(s + ':infinite'))
+            } else {
+                Object.entries(STATS.general).map((e: any) => general.indexOf(e[0]) !== -1 ? statParams.push(e[1] + ':infinite') : null)
+            }
+        }
+
+        if (stats.gamemodes) {
+            // TODO
+        }
+
+        if (stats.playlists) {
+            // TODO
+        }
+
+        if (stats.operator) {
+            // TODO
+        }
+
+        // console.log('TCL: APIService -> statParams', statParams, statParams.length)
+
+        const res = await fetcher<UbisoftPlayerStatsData>(`${URLS[platform].STATS_URL}statistics=${statParams.join(',')}&populations=${_ids.join(',')}`, {}, token)
+
+        const statsData: GetStatsResponse = {};
+        for (const id in res.results) {
+            const { general, gamemodes, playlists, operator} = stats;
+            statsData[id] = {
+                id,
+                general: Object.entries(res.results[id])
+                            .filter((e) => general === '*' ? true : Object.values(STATS.general).includes(e[0].slice(0, -9)))
+                            .map((e) => {
+                                e[0] = Object.keys(STATS.general)[Object.values(STATS.general).indexOf(e[0].slice(0, -9))]
+                                return e;
+                            })
+                            .reduce((obj, [k, v]) => ({ ...obj, [k]: v }), {}),
+                gamemodes: {}, // TODO
+                playlists: {}, // TODO
+            }
+        }
+        return statsData;
     }
 
     /**

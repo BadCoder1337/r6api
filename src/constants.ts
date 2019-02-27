@@ -74,424 +74,597 @@ export const WEAPONTYPES = {
     B: 'B',
 };
 
-export const OPERATORS = [
-    {
-        id: "recruit1",
-        name: "recruit1",
-        readableName: "Recruit1",
+export const OPERATORS = {
+    'recruit-sas': {
+        id: "recruit-sas",
+        side: "both",
+        name: "recruit",
+        readableName: "Recruit SAS",
+        ctu: 'sas',
+        readableCtuName: "SAS",
         fullIndex: "1:1",
         gadget: "nothing"
     },
-    {
-        id: "recruit2",
-        name: "recruit2",
-        readableName: "Recruit2",
+    'recruit-fbi-swat': {
+        id: "recruit-fbi-swat",
+        side: "both",
+        name: "recruit",
+        readableName: "Recruit FBI SWAT",
+        ctu: "fbi-swat",
+        readableCtuName: "FBI SWAT",
         fullIndex: "1:2",
         gadget: "nothing"
     },
-    {
-        id: "recruit3",
-        name: "recruit3",
-        readableName: "Recruit3",
+    'recruit-gign': {
+        id: "recruit-gign",
+        side: "both",
+        name: "recruit",
+        readableName: "Recruit GIGN",
+        ctu: 'gign',
+        readableCtuName: "GIGN",
         fullIndex: "1:3",
         gadget: "nothing"
     },
-    {
-        id: "recruit4",
-        name: "recruit4",
-        readableName: "Recruit4",
+    'recruit-spetsnaz': {
+        id: "recruit-spetsnaz",
+        side: "both",
+        name: "recruit",
+        readableName: "Recruit SPETSNAZ",
+        ctu: "spetsnaz",
+        readableCtuName: "SPETSNAZ",
         fullIndex: "1:4",
         gadget: "nothing"
     },
-    {
-        id: "recruit5",
-        name: "recruit5",
-        readableName: "Recruit5",
+    'recruit-gsg-9': {
+        id: "recruit-gsg-9",
+        side: "both",
+        name: "recruit",
+        readableName: "Recruit GSG 9",
+        ctu: "gsg-9",
+        readableCtuName: "GSG 9",
         fullIndex: "1:5",
         gadget: "nothing"
     },
-    {
-        id: "smoke-sas",
+    'smoke': {
+        id: "smoke",
+        side: "def",
         name: "smoke",
         readableName: "Smoke",
+        ctu: 'sas',
+        readableCtuName: "SAS",
         fullIndex: "2:1",
         gadget: "operatorpvp_smoke_poisongaskill"
     },
-    {
-        id: "mute-sas",
+    'mute': {
+        id: "mute",
+        side: "def",
         name: "mute",
         readableName: "Mute",
+        ctu: 'sas',
+        readableCtuName: "SAS",
         fullIndex: "3:1",
         gadget: "operatorpvp_mute_gadgetjammed"
     },
-    {
-        id: "sledge-sas",
+    'sledge': {
+        id: "sledge",
+        side: "atk",
         name: "sledge",
         readableName: "Sledge",
+        ctu: 'sas',
+        readableCtuName: "SAS",
         fullIndex: "4:1",
         gadget: "operatorpvp_sledge_hammerhole"
     },
-    {
-        id: "thatcher-sas",
+    'thatcher': {
+        id: "thatcher",
+        side: "atk",
         name: "thatcher",
         readableName: "Thatcher",
+        ctu: 'sas',
+        readableCtuName: "SAS",
         fullIndex: "5:1",
         gadget: "operatorpvp_thatcher_gadgetdestroywithemp"
     },
-    {
-        id: "castle-fbi-swat",
+    'castle': {
+        id: "castle",
+        side: "def",
         name: "castle",
         readableName: "Castle",
+        ctu: "fbi-swat",
+        readableCtuName: "FBI SWAT",
         fullIndex: "2:2",
         gadget: "operatorpvp_castle_kevlarbarricadedeployed"
     },
-    {
-        id: "ash-fbi-swat",
+    'ash': {
+        id: "ash",
+        side: "atk",
         name: "ash",
         readableName: "Ash",
+        ctu: "fbi-swat",
+        readableCtuName: "FBI SWAT",
         fullIndex: "3:2",
         gadget: "operatorpvp_ash_bonfirewallbreached"
     },
-    {
-        id: "pulse-fbi-swat",
+    'pulse': {
+        id: "pulse",
+        side: "def",
         name: "pulse",
         readableName: "Pulse",
+        ctu: "fbi-swat",
+        readableCtuName: "FBI SWAT",
         fullIndex: "4:2",
         gadget: "operatorpvp_pulse_heartbeatspot"
     },
-    {
-        id: "thermite-fbi-swat",
+    'thermite': {
+        id: "thermite",
+        side: "atk",
         name: "thermite",
         readableName: "Thermite",
+        ctu: "fbi-swat",
+        readableCtuName: "FBI SWAT",
         fullIndex: "5:2",
         gadget: "operatorpvp_thermite_reinforcementbreached"
     },
-    {
-        id: "doc-gign",
+    'doc': {
+        id: "doc",
+        side: "def",
         name: "doc",
         readableName: "Doc",
+        ctu: 'gign',
+        readableCtuName: "GIGN",
         fullIndex: "2:3",
         gadget: "operatorpvp_doc_teammaterevive"
     },
-    {
-        id: "rook-gign",
+    'rook': {
+        id: "rook",
+        side: "def",
         name: "rook",
         readableName: "Rook",
+        ctu: 'gign',
+        readableCtuName: "GIGN",
         fullIndex: "3:3",
         gadget: "operatorpvp_rook_armortakenteammate"
     },
-    {
-        id: "twitch-gign",
+    'twitch': {
+        id: "twitch",
+        side: "atk",
         name: "twitch",
         readableName: "Twitch",
+        ctu: 'gign',
+        readableCtuName: "GIGN",
         fullIndex: "4:3",
         gadget: "operatorpve_twitch_gadgetdestroybyshockdrone"
     },
-    {
-        id: "montagne-gign",
+    'montagne': {
+        id: "montagne",
+        side: "atk",
         name: "montagne",
         readableName: "Montagne",
+        ctu: 'gign',
+        readableCtuName: "GIGN",
         fullIndex: "5:3",
         gadget: "operatorpvp_montagne_shieldblockdamage"
     },
-    {
-        id: "glaz-spetsnaz",
+    'glaz': {
+        id: "glaz",
+        side: "atk",
         name: "glaz",
         readableName: "Glaz",
+        ctu: "spetsnaz",
+        readableCtuName: "SPETSNAZ",
         fullIndex: "2:4",
         gadget: "operatorpvp_glaz_sniperkill"
     },
-    {
-        id: "fuze-spetsnaz",
+    'fuze': {
+        id: "fuze",
+        side: "atk",
         name: "fuze",
         readableName: "Fuze",
+        ctu: "spetsnaz",
+        readableCtuName: "SPETSNAZ",
         fullIndex: "3:4",
         gadget: "operatorpvp_fuze_clusterchargekill"
     },
-    {
-        id: "kapkan-spetsnaz",
+    'kapkan': {
+        id: "kapkan",
+        side: "def",
         name: "kapkan",
         readableName: "Kapkan",
+        ctu: "spetsnaz",
+        readableCtuName: "SPETSNAZ",
         fullIndex: "4:4",
         gadget: "operatorpvp_kapkan_boobytrapkill"
     },
-    {
-        id: "tachanka-spetsnaz",
+    'tachanka': {
+        id: "tachanka",
+        side: "def",
         name: "tachanka",
-        readableName: "Tachanka",
+        readableName: "Tachanka (Lord)",
+        ctu: "spetsnaz",
+        readableCtuName: "SPETSNAZ",
         fullIndex: "5:4",
         gadget: "operatorpvp_tachanka_turretkill"
     },
-    {
-        id: "blitz-gsg-9",
+    'blitz': {
+        id: "blitz",
+        side: "atk",
         name: "blitz",
         readableName: "Blitz",
+        ctu: "gsg-9",
+        readableCtuName: "GSG 9",
         fullIndex: "2:5",
         gadget: "operatorpvp_blitz_flashedenemy"
     },
-    {
-        id: "iq-gsg-9",
+    'iq': {
+        id: "iq",
+        side: "atk",
         name: "iq",
         readableName: "IQ",
+        ctu: "gsg-9",
+        readableCtuName: "GSG 9",
         fullIndex: "3:5",
         gadget: "operatorpvp_iq_gadgetspotbyef"
     },
-    {
-        id: "jager-gsg-9",
+    'jager': {
+        id: "jager",
+        side: "def",
         name: "jager",
         readableName: "Jäger",
+        ctu: "gsg-9",
+        readableCtuName: "GSG 9",
         fullIndex: "4:5",
         gadget: "operatorpvp_jager_gadgetdestroybycatcher"
     },
-    {
-        id: "bandit-gsg-9",
+    'bandit': {
+        id: "bandit",
+        side: "def",
         name: "bandit",
         readableName: "Bandit",
+        ctu: "gsg-9",
+        readableCtuName: "GSG 9",
         fullIndex: "5:5",
         gadget: "operatorpvp_bandit_batterykill"
     },
-    {
-        id: "buck-jtf2",
+    'buck': {
+        id: "buck",
+        side: "atk",
         name: "buck",
         readableName: "Buck",
+        ctu: "jtf2",
+        readableCtuName: "JTF2",
         fullIndex: "2:6",
         gadget: "operatorpvp_buck_kill"
     },
-    {
-        id: "frost-jtf2",
+    'frost': {
+        id: "frost",
+        side: "def",
         name: "frost",
         readableName: "Frost",
+        ctu: "jtf2",
+        readableCtuName: "JTF2",
         fullIndex: "3:6",
         gadget: "operatorpvp_frost_dbno"
     },
-    {
-        id: "blackbeard-navy-seal",
+    'blackbeard': {
+        id: "blackbeard",
+        side: "atk",
         name: "blackbeard",
         readableName: "Blackbeard",
+        ctu: "navy-seal",
+        readableCtuName: "NAVY SEAL",
         fullIndex: "2:7",
         gadget: "operatorpvp_blackbeard_gunshieldblockdamage"
     },
-    {
-        id: "valkyrie-navy-seal",
+    'valkyrie': {
+        id: "valkyrie",
+        side: "def",
         name: "valkyrie",
         readableName: "Valkyrie",
+        ctu: "navy-seal",
+        readableCtuName: "NAVY SEAL",
         fullIndex: "3:7",
         gadget: "operatorpvp_valkyrie_camdeployed"
     },
-    {
-        id: "capitao-bope",
+    'capitao': {
+        id: "capitao",
+        side: "atk",
         name: "capitao",
         readableName: "Capitão",
+        ctu: "bope",
+        readableCtuName: "BOPE",
         fullIndex: "2:8",
         gadget: "operatorpvp_capitao_lethaldartkills"
     },
-    {
-        id: "caveira-bope",
+    'caveira': {
+        id: "caveira",
+        side: "def",
         name: "caveira",
         readableName: "Caveira",
+        ctu: "bope",
+        readableCtuName: "BOPE",
         fullIndex: "3:8",
         gadget: "operatorpvp_caveira_interrogations"
     },
-    {
-        id: "hibana-sat",
+    'hibana': {
+        id: "hibana",
+        side: "atk",
         name: "hibana",
         readableName: "Hibana",
+        ctu: "sat",
+        readableCtuName: "SAT",
         fullIndex: "2:9",
         gadget: "operatorpvp_hibana_detonate_projectile"
     },
-    {
-        id: "echo-sat",
+    'echo': {
+        id: "echo",
+        side: "def",
         name: "echo",
         readableName: "Echo",
+        ctu: "sat",
+        readableCtuName: "SAT",
         fullIndex: "3:9",
         gadget: "operatorpvp_echo_enemy_sonicburst_affected"
     },
-    {
-        id: "jackal-geo",
+    'jackal': {
+        id: "jackal",
+        side: "atk",
         name: "jackal",
         readableName: "Jackal",
+        ctu: "geo",
+        readableCtuName: "GEO",
         fullIndex: "2:A",
         gadget: "operatorpvp_cazador_assist_kill"
     },
-    {
-        id: "mira-geo",
+    'mira': {
+        id: "mira",
+        side: "def",
         name: "mira",
         readableName: "Mira",
+        ctu: "geo",
+        readableCtuName: "GEO",
         fullIndex: "3:A",
         gadget: "operatorpvp_black_mirror_gadget_deployed"
     },
-    {
-        id: "ying-sat",
+    'ying': {
+        id: "ying",
+        side: "atk",
         name: "ying",
         readableName: "Ying",
+        ctu: "sdu",
+        readableCtuName: "SDU",
         fullIndex: "2:B",
         gadget: "operatorpvp_dazzler_gadget_detonate"
     },
-    {
-        id: "lesion-sat",
+    'lesion': {
+        id: "lesion",
+        side: "def",
         name: "lesion",
         readableName: "Lesion",
+        ctu: "sdu",
+        readableCtuName: "SDU",
         fullIndex: "3:B",
         gadget: "operatorpvp_caltrop_enemy_affected"
     },
-    {
-        id: "ela-grom",
+    'ela': {
+        id: "ela",
+        side: "def",
         name: "ela",
         readableName: "Ela",
+        ctu: "grom",
+        readableCtuName: "GROM",
         fullIndex: "2:C",
         gadget: "operatorpvp_concussionmine_detonate"
     },
-    {
-        id: "zofia-grom",
+    'zofia': {
+        id: "zofia",
+        side: "atk",
         name: "zofia",
         readableName: "Zofia",
+        ctu: "grom",
+        readableCtuName: "GROM",
         fullIndex: "3:C",
         gadget: "operatorpvp_concussiongrenade_detonate"
     },
-    {
-        id: "vigil-707th-smb",
+    'vigil': {
+        id: "vigil",
+        side: "def",
         name: "vigil",
         readableName: "Vigil",
+        ctu: "707th-smb",
+        readableCtuName: "707th SMB",
         fullIndex: "3:D",
         gadget: "operatorpvp_attackerdrone_diminishedrealitymode"
     },
-    {
-        id: "dokkaebi-707th-smb",
+    'dokkaebi': {
+        id: "dokkaebi",
+        side: "atk",
         name: "dokkaebi",
         readableName: "Dokkaebi",
+        ctu: "707th-smb",
+        readableCtuName: "707th SMB",
         fullIndex: "2:D",
         gadget: "operatorpvp_phoneshacked"
     },
-    {
-        id: "Lion-gign",
+    'lion': {
+        id: "lion",
+        side: "atk",
         name: "lion",
         readableName: "Lion",
+        ctu: "cbrn",
+        readableCtuName: "CBRN (GIGN)",
         fullIndex: "3:E",
         gadget: "operatorpvp_tagger_tagdevice_spot"
     },
-    {
-        id: "Finka-spetsnaz",
+    'finka': {
+        id: "finka",
+        side: "atk",
         name: "finka",
         readableName: "Finka",
+        ctu: "cbrn",
+        readableCtuName: "CBRN (SPETSNAZ)",
         fullIndex: "4:E",
         gadget: "operatorpvp_rush_adrenalinerush"
     },
-    {
+    'alibi': {
         id: "alibi",
+        side: "def",
         name: "alibi",
         fullIndex: "3:F",
         readableName: "Alibi",
+        ctu: "gis",
+        readableCtuName: "GIS",
         gadget: "operatorpvp_deceiver_revealedattackers"
     },
-    {
+    'maestro': {
         id: "maestro",
+        side: "def",
         name: "maestro",
         fullIndex: "2:F",
         readableName: "Maestro",
+        ctu: "gis",
+        readableCtuName: "GIS",
         gadget: "operatorpvp_barrage_killswithturret"
     },
-    {
+    'maverick': {
         id: "maverick",
+        side: "atk",
         name: "maverick",
         readableName: "Maverick",
+        ctu: "gsutr",
+        readableCtuName: "GSUTR",
         fullIndex: "2:10",
         gadget: "operatorpvp_maverick_wallbreached"
     },
-    {
+    'clash': {
         id: "clash",
+        side: "def",
         name: "clash",
         readableName: "Clash",
+        ctu: "gsutr",
+        readableCtuName: "GSUTR",
         fullIndex: "3:10",
         gadget: "operatorpvp_clash_sloweddown"
     },
-    {
+    'kaid': {
         id: "kaid",
+        side: "def",
         name: "kaid",
         readableName: "Kaid",
+        ctu: "gigr",
+        readableCtuName: "GIGR",
         fullIndex: "3:11",
         gadget: "operatorpvp_Nomad_Assist"
     },
-    {
+    'nomad': {
         id: "nomad",
+        side: "atk",
         name: "nomad",
         readableName: "Nomad",
+        ctu: "gigr",
+        readableCtuName: "GIGR",
         fullIndex: "2:11",
         gadget: "operatorpvp_Kaid_Electroclaw_Hatches"
+    },
+    'mozzie': {
+        id: "mozzie",
+        side: "def",
+        name: "mozzie",
+        readableName: "Mozzie",
+        ctu: "sasr",
+        readableCtuName: "SASR",
+        fullIndex: "3:12",
+        gadget: "nothing"
+    },
+    'gridlock': {
+        id: "gridlock",
+        side: "atk",
+        name: "gridlock",
+        readableName: "Gridlock",
+        ctu: "sasr",
+        readableCtuName: "SASR",
+        fullIndex: "2:12",
+        gadget: "nothing"
     }
-];
+};
 
-let OperatorGadgets: Array<string> = []
-OPERATORS.forEach((op) => {
-    if (op.gadget !== 'nothing') {
-        OperatorGadgets.push(op.gadget)
-    }
-})
+// let OperatorGadgets: Array<string> = []
+// OPERATORS.forEach((op) => {
+//     if (op.gadget !== 'nothing') {
+//         OperatorGadgets.push(op.gadget)
+//     }
+// })
 
-export const STATS = [
-    "casualpvp_kills",
-    "casualpvp_death",
-    "casualpvp_matchlost",
-    "casualpvp_matchplayed",
-    "casualpvp_matchwon",
-    "casualpvp_timeplayed",
-    "generalpvp_bulletfired",
-    "generalpvp_bullethit",
-    "generalpvp_headshot",
-    "generalpvp_death",
-    "generalpvp_killassists",
-    "generalpvp_kills",
-    "generalpvp_matchlost",
-    "generalpvp_matchplayed",
-    "generalpvp_matchwon",
-    "generalpvp_meleekills",
-    "generalpvp_penetrationkills",
-    "generalpvp_revive",
-    "generalpvp_timeplayed",
-    "rankedpvp_kills",
-    "rankedpvp_death",
-    "rankedpvp_matchlost",
-    "rankedpvp_matchplayed",
-    "rankedpvp_matchwon",
-    "rankedpvp_timeplayed",
-    "secureareapvp_bestscore",
-    "secureareapvp_matchlost",
-    "secureareapvp_matchplayed",
-    "secureareapvp_matchwon",
-    "secureareapvp_timeplayed",
-    "rescuehostagepvp_bestscore",
-    "rescuehostagepvp_matchlost",
-    "rescuehostagepvp_matchplayed",
-    "rescuehostagepvp_matchwon",
-    "rescuehostagepvp_timeplayed",
-    "plantbombpvp_bestscore",
-    "plantbombpvp_matchlost",
-    "plantbombpvp_matchplayed",
-    "plantbombpvp_matchwon",
-    "plantbombpvp_timeplayed",
-    "weapontypepvp_headshot",
-    "weapontypepvp_bulletfired",
-    "weapontypepvp_bullethit",
-    "weapontypepvp_kills",
-    "operatorpvp_kills",
-    "operatorpvp_death",
-    "operatorpvp_roundwon",
-    "operatorpvp_roundlost",
-    "operatorpvp_timeplayed",
+export const STATS = {
+    casual: {
+        deaths: 'casualpvp_death',
+        lost: 'casualpvp_matchlost',
+        played: 'casualpvp_matchplayed',
+        won: 'casualpvp_matchwon',
+        timePlayed: 'casualpvp_timeplayed',
+        kills: 'casualpvp_kills',
+    },
+    custom: {
+        timePlayed: 'custompvp_timeplayed',
+    },
+    general: {
+        assists: 'generalpvp_killassists',
+        meleeKills: 'generalpvp_meleekills',
+        penetrationKills: 'generalpvp_penetrationkills',
+        revives: 'generalpvp_revive',
+        blindKills: 'generalpvp_blindkills',
+        dbno: 'generalpvp_dbno',
+        dbnoAssists: 'generalpvp_dbnoassists',
+        gadgetsDestroyed: 'generalpvp_gadgetdestroy',
+        hostageDefense: 'generalpvp_hostagedefense',
+        hostageRescue: 'generalpvp_hostagerescue',
+        rappelBreaches: 'generalpvp_rappelbreach',
+        revivesDenied: 'generalpvp_revivedenied',
+        serverAggression: 'generalpvp_serveraggression',
+        serverDefender: 'generalpvp_serverdefender',
+        serversHacked: 'generalpvp_servershacked',
+        suicides: 'generalpvp_suicide',
+        deaths: 'generalpvp_death',
+        lost: 'generalpvp_matchlost',
+        played: 'generalpvp_matchplayed',
+        won: 'generalpvp_matchwon',
+        timePlayed: 'generalpvp_timeplayed',
+        kills: 'generalpvp_kills',
+        headshot: 'generalpvp_headshot',
+        bulletsFired: 'generalpvp_bulletfired',
+        bulletsHit: 'generalpvp_bullethit',
+        barricadesDeployed: 'generalpvp_barricadedeployed',
+        reinforcementsDeployed: 'generalpvp_reinforcementdeployed'
+    },
+    ranked: {
+        deaths: 'rankedpvp_death',
+        lost: 'rankedpvp_matchlost',
+        played: 'rankedpvp_matchplayed',
+        won: 'rankedpvp_matchwon',
+        timePlayed: 'rankedpvp_timeplayed',
+        kills: 'rankedpvp_kills',
+    },
+    secure: {
+        bestScore: 'secureareapvp_bestscore',
+        lost: 'secureareapvp_matchlost',
+        played: 'secureareapvp_matchplayed',
+        won: 'secureareapvp_matchwon',
+        timePlayed: 'secureareapvp_timeplayed',
+    },
+    hostage: {
+        bestScore: 'rescuehostagepvp_bestscore',
+        lost: 'rescuehostagepvp_matchlost',
+        played: 'rescuehostagepvp_matchplayed',
+        won: 'rescuehostagepvp_matchwon',
+        timePlayed: 'rescuehostagepvp_timeplayed',
+    },
+    bomb: {
+        bestScore: 'plantbombpvp_bestscore',
+        lost: 'plantbombpvp_matchlost',
+        played: 'plantbombpvp_matchplayed',
+        won: 'plantbombpvp_matchwon',
+        timePlayed: 'plantbombpvp_timeplayed',
+    },
+    weapons: {}
+}
 
-    "generalpvp_blindkills",
-    "generalpvp_dbno",
-    "generalpvp_dbnoassists",
-    "generalpvp_gadgetdestroy",
-    "generalpvp_hostagedefense",
-    "generalpvp_hostagerescue",
-    "generalpvp_rappelbreach",
-    "generalpvp_revivedenied",
-    "generalpvp_serveraggression",
-    "generalpvp_serverdefender",
-    "generalpvp_servershacked",
-    "generalpvp_reinforcementdeployed",
-    "generalpvp_barricadedeployed",
-    "totalxp",
-    "generalpvp_suicide",
-    ...OperatorGadgets
-];
+// TODO weapons & operators
