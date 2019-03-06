@@ -13,7 +13,8 @@
         "build": "tsc --skipLibCheck",
         "dev": "tsc -w",
         "docs": "typedoc --out docs --name R6Api src/index.ts",
-        "test": "yarn build && node test.js"
+        "test": "yarn build && node test.js",
+        "postinstall": "yarn build"
     },
     "author": "R6S.Media & R6DB.com",
     "license": "ISC",
