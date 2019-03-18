@@ -19,16 +19,16 @@
     "author": "R6S.Media & R6DB.com",
     "license": "ISC",
     "dependencies": {
-        "bluebird": "^3.5.1",
+        "bluebird": "^3.5.3",
         "lodash.merge": "^4.6.0",
-        "node-fetch": "^1.7.3"
+        "node-fetch": "^2.3.0"
     },
     "devDependencies": {
-        "@types/bluebird": "^3.5.20",
-        "@types/debug": "^0.0.30",
-        "@types/lodash.merge": "^4.6.3",
-        "@types/node-fetch": "^1.6.9",
-        "typedoc": "^0.11.1",
-        "typescript": "^2.8.3"
+        "@types/bluebird": "^3.5.26",
+        "@types/debug": "^4.1.2",
+        "@types/lodash.merge": "^4.6.6",
+        "@types/node-fetch": "^2.1.6",
+        "typedoc": "^0.14.2",
+        "typescript": "^3.3.3333"
     }
 }
