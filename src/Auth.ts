@@ -22,11 +22,14 @@ export class AuthService {
 
     constructor(creds: UbisoftCreditionals) {
 
-        if (!creds.email || !creds.password) {
+        if ((!creds.email || !creds.password) && (!process.env.R6API_LOGIN || process.env.R6API_PASSWORD)) {
             throw new Errors.MissingCredentialsError();
         }
 
-        this.creds = creds
+        this.creds = {
+            email: creds.email || process.env.R6API_LOGIN,
+            password: creds.password || process.env.R6API_PASSWORD
+        }
     }
 
     /**
@@ -47,7 +50,14 @@ export class AuthService {
         }
 
         if (!this.creds) {
-            throw new Error('Creds not found on login')
+            if (process.env.R6API_LOGIN && process.env.R6API_PASSWORD) {
+                this.creds = {
+                    email: process.env.R6API_LOGIN,
+                    password: process.env.R6API_PASSWORD
+                }
+            } else {
+                throw new Error('Creds not found on login')
+            }
         }
 
         const token =
